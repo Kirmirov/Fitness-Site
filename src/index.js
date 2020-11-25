@@ -15,6 +15,7 @@ import 'whatwg-fetch';
 
 import gymChoice from './modules/gymChoice';
 import openModalWindow from './modules/openModalWindow';
+import headerSlider from './modules/headerSlider';
 
 //headerChoice dropdown menu
 gymChoice();
@@ -25,31 +26,6 @@ openModalWindow('callback_form');
 openModalWindow('gift');
 
 //header slider auto
-
-const headerSlider = () => {
-    const sliderWrap = document.querySelector('.main-slider'),
-        sliderList = sliderWrap.querySelectorAll('.slide');
-        console.log(sliderList);
-    
-    const list = [...sliderList];
-        console.log(list);
-    // let slideCount = 0;
-    // const changeSlide = () => {
-    //     if(slideCount < sliderList.length) slideCount = 0;
-    //         animate ({
-    //             duration: 1000,
-    //             timing(timeFraction) {
-    //                 return timeFraction;
-    //             },
-    //             draw(progress) {
-    //                 [...sliderList][slideCount].style.opacity = 1 - progress;
-    //                 [...sliderList][slideCount+1].style.opacity = progress * 1;
-    //             }
-    //         });
-    //     slideCount++;
-    // };
-    // setInterval(changeSlide, 2000);
-};
 
 headerSlider();
 
