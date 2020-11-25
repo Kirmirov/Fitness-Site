@@ -1,4 +1,3 @@
-
 import 'nodelist-foreach-polyfill';
 import "@babel/polyfill";
 import elementClosest from 'element-closest';

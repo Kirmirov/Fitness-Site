@@ -1,4 +1,4 @@
-import animate from 'animatePattern';
+import animate from './animatePattern';
 
 const gymChoice = () => {
     const clubsList = document.querySelector('.clubs-list'),

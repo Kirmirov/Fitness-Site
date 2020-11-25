@@ -1,4 +1,4 @@
-import animate from 'animatePattern';
+import animate from './animatePattern';
 
 const openModalWindow = (formID) => {
     const modalForm = document.getElementById(formID),
