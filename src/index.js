@@ -23,10 +23,13 @@ gymChoice();
 //interaction with header's modal form
 openModalWindow('free_visit_form');
 openModalWindow('callback_form');
-openModalWindow('gift');
+if(document.getElementById('gift') !== null) openModalWindow('gift');
+
 
 //header slider auto
-
 headerSlider();
 
-//animation pattern
+
+const sendForm = (form) => {
+
+};
