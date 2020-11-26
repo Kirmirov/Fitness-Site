@@ -17,6 +17,10 @@ const openModalWindow = (formID) => {
                 modalForm.style.opacity = progress * 1;
             }
         });
+        if(closeGift){
+            const giftLabel = document.querySelector('.fixed-gift');
+            giftLabel.style.display = 'none';
+        }
     });
 
     closeForm.addEventListener('click', () => {
