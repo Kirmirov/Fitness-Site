@@ -48,7 +48,63 @@ addScrollTo('a[href*="up"]');
 menuScroll('.top-menu');
 
 //card calculator
-if(document.getElementById('.card-calc') !== null) cardCalc('.card-calc');
+if(document.querySelector('.card-calc') !== null) cardCalc('.card-calc');
 
 //scroll invise
 scrollInvise('a[href*="up"]');
+
+// const sendSimpleForm = (formSelector) => {
+//     const erroMessage = 'Что то пошло не так...',
+//         successMesage = 'Спасибо! Мы скоро свяжемся с Вами!';
+    
+//     const form = document.getElementById(formSelector);
+//     const statusMessage = document.createElement('div');
+//     statusMessage.style.cssText = 'font-size: 2rem;';
+//     statusMessage.style.color = '#fff';
+//     form.addEventListener('submit', (evt) => {
+//         evt.preventDefault();
+//         form.appendChild(statusMessage);
+//         getFormValue(form)
+//         .then(body => postData(body))
+//         .then((response) => {
+//             if(response.status !== 200) throw new Error('status is not 200')
+//             statusMessage.textContent = successMesage;
+//             form.reset();
+//             setTimeout(() => {
+//                 statusMessage.textContent = '';
+//             }, 5000);
+//         })
+//         .catch(() => {
+//             statusMessage.textContent = erroMessage;
+//             form.reset();
+//             setTimeout(() => {
+//                 statusMessage.textContent = '';
+//             }, 5000);
+//         });
+//     });
+
+
+//     const getFormValue = form => {
+//         return new Promise ((resolve, reject) => {
+//             const formData = new FormData(form);
+//             let body = {};
+//             for (let val of formData.entries()){
+//                 body[val[0]] = val[1];
+//             }
+//             if(body.length !== 0) resolve(body);
+//             else reject('Form is empty');
+//         });
+//     };
+//     const postData = (body) => {
+//         return fetch('./server.php', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(body)
+//         });
+//     };
+// };
+
+// sendSimpleForm('form1');
+
