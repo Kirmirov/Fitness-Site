@@ -20,6 +20,8 @@ import addScrollTo from './modules/addScrollTo';
 import menuScroll from './modules/menuScroll';
 import formValidation from './modules/formValidation';
 import cardCalc from './modules/cardCalc';
+import scrollInvise from './modules/scrollInvise';
+
 //headerChoice dropdown menu
 gymChoice();
 
@@ -47,3 +49,6 @@ menuScroll('.top-menu');
 
 //card calculator
 if(document.getElementById('.card-calc') !== null) cardCalc('.card-calc');
+
+//scroll invise
+scrollInvise('a[href*="up"]');
