@@ -44,6 +44,7 @@ const headerSlider = () => {
         })
         .then(appearance);
     };
+    changeSlide();
     setInterval(changeSlide, 2000);
 };
 

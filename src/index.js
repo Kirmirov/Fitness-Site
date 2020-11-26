@@ -16,7 +16,10 @@ import 'whatwg-fetch';
 import gymChoice from './modules/gymChoice';
 import openModalWindow from './modules/openModalWindow';
 import headerSlider from './modules/headerSlider';
-
+import addScrollTo from './modules/addScrollTo';
+import menuScroll from './modules/menuScroll';
+import formValidation from './modules/formValidation';
+import cardCalc from './modules/cardCalc';
 //headerChoice dropdown menu
 gymChoice();
 
@@ -29,7 +32,18 @@ if(document.getElementById('gift') !== null) openModalWindow('gift');
 //header slider auto
 headerSlider();
 
+// validations for forms
+formValidation('form1');
+formValidation('form2');
+formValidation('banner-form');
+formValidation('card_order');
+formValidation('footer_form');
 
-const sendForm = (form) => {
+//scroll up
+addScrollTo('a[href*="up"]');
 
-};
+//menu scroll
+menuScroll('.top-menu');
+
+//card calculator
+if(document.getElementById('.card-calc') !== null) cardCalc('.card-calc');
