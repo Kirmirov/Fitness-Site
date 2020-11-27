@@ -21,6 +21,7 @@ import menuScroll from './modules/menuScroll';
 import formValidation from './modules/formValidation';
 import cardCalc from './modules/cardCalc';
 import scrollInvise from './modules/scrollInvise';
+import gallerySlider from './modules/gallerySlider';
 
 //headerChoice dropdown menu
 gymChoice();
@@ -52,6 +53,9 @@ if(document.querySelector('.card-calc') !== null) cardCalc('.card-calc');
 
 //scroll invise
 scrollInvise('a[href*="up"]');
+
+//slider section gallery
+gallerySlider();
 
 // const sendSimpleForm = (formSelector) => {
 //     const erroMessage = 'Что то пошло не так...',
