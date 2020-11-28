@@ -24,6 +24,7 @@ import scrollInvise from './modules/scrollInvise';
 import gallerySlider from './modules/gallerySlider';
 import stickyBurgerMenu from './modules/stickyBurgerMenu';
 import burgerMenuAction from './modules/burgerMenuAction';
+import sendForm from './modules/sendForm';
 
 //headerChoice dropdown menu
 gymChoice();
@@ -65,58 +66,10 @@ stickyBurgerMenu();
 //open, close and scroll burger menu
 burgerMenuAction();
 
-// const sendSimpleForm = (formSelector) => {
-//     const erroMessage = 'Что то пошло не так...',
-//         successMesage = 'Спасибо! Мы скоро свяжемся с Вами!';
-    
-//     const form = document.getElementById(formSelector);
-//     const statusMessage = document.createElement('div');
-//     statusMessage.style.cssText = 'font-size: 2rem;';
-//     statusMessage.style.color = '#fff';
-//     form.addEventListener('submit', (evt) => {
-//         evt.preventDefault();
-//         form.appendChild(statusMessage);
-//         getFormValue(form)
-//         .then(body => postData(body))
-//         .then((response) => {
-//             if(response.status !== 200) throw new Error('status is not 200')
-//             statusMessage.textContent = successMesage;
-//             form.reset();
-//             setTimeout(() => {
-//                 statusMessage.textContent = '';
-//             }, 5000);
-//         })
-//         .catch(() => {
-//             statusMessage.textContent = erroMessage;
-//             form.reset();
-//             setTimeout(() => {
-//                 statusMessage.textContent = '';
-//             }, 5000);
-//         });
-//     });
-
-
-//     const getFormValue = form => {
-//         return new Promise ((resolve, reject) => {
-//             const formData = new FormData(form);
-//             let body = {};
-//             for (let val of formData.entries()){
-//                 body[val[0]] = val[1];
-//             }
-//             if(body.length !== 0) resolve(body);
-//             else reject('Form is empty');
-//         });
-//     };
-//     const postData = (body) => {
-//         return fetch('./server.php', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(body)
-//         });
-//     };
-// };
-
-// sendSimpleForm('form1');
+//send all forms by ajax-json
+sendForm('form2');
+sendForm('form1');
+sendForm('banner-form');
+sendForm('card_order');
+sendForm('footer_form');
 

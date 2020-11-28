@@ -19,7 +19,7 @@ const cardCalc = (caclSelector) => {
     let timeOfCard = 1;
     let gym = mozGym; 
     let promo = false;
-    const promoWord = 'ТЕЛО2019';
+    const promoWord = 'ТЕЛО2020';
     const discount = 30;
 
     const calculate = () => {
@@ -54,7 +54,6 @@ const cardCalc = (caclSelector) => {
     promoField.addEventListener('input', () => {
         if(promoField.value.match(promoWord)) {
             promo = true;
-            promoField.setAttribute("readonly", "readonly");
             calculate();
         }
     });
