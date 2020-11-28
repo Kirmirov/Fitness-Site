@@ -14,7 +14,7 @@ import "scroll-behavior-polyfill";
 import 'whatwg-fetch';
 
 import gymChoice from './modules/gymChoice';
-import openModalWindow from './modules/openModalWindow';
+import modalWindowAction from './modules/modalWindowAction';
 import headerSlider from './modules/headerSlider';
 import addScrollTo from './modules/addScrollTo';
 import menuScroll from './modules/menuScroll';
@@ -22,14 +22,16 @@ import formValidation from './modules/formValidation';
 import cardCalc from './modules/cardCalc';
 import scrollInvise from './modules/scrollInvise';
 import gallerySlider from './modules/gallerySlider';
+import stickyBurgerMenu from './modules/stickyBurgerMenu';
+import burgerMenuAction from './modules/burgerMenuAction';
 
 //headerChoice dropdown menu
 gymChoice();
 
 //interaction with header's modal form
-openModalWindow('free_visit_form');
-openModalWindow('callback_form');
-if(document.getElementById('gift') !== null) openModalWindow('gift');
+modalWindowAction('free_visit_form');
+modalWindowAction('callback_form');
+if(document.getElementById('gift') !== null) modalWindowAction('gift');
 
 
 //header slider auto
@@ -57,8 +59,11 @@ scrollInvise('a[href*="up"]');
 //slider section gallery
 gallerySlider();
 
+//sticky burger-menu when scroll
+stickyBurgerMenu();
 
-
+//open, close and scroll burger menu
+burgerMenuAction();
 
 // const sendSimpleForm = (formSelector) => {
 //     const erroMessage = 'Что то пошло не так...',
