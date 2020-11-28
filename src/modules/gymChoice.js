@@ -5,7 +5,8 @@ const gymChoice = () => {
             list = clubsList.querySelector('ul');
 
     clubsList.addEventListener('click', () => {
-        list.style.display = (getComputedStyle(list).display === 'block') ? 'none' : 'block';
+        list.style.display = 'block';
+        if(getComputedStyle(list).display === 'block') return;
         animate ({
             duration: 400,
             timing(timeFraction) {
@@ -15,6 +16,10 @@ const gymChoice = () => {
                 list.style.opacity = progress * 1;
             }
         });
+    });
+    
+    document.addEventListener('click', evt => {
+        if(evt.target.closest('.club-select') === null) list.style.display = 'none';
     });
 };
 

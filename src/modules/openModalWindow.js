@@ -4,6 +4,7 @@ const openModalWindow = (formID) => {
     const modalForm = document.getElementById(formID),
         openForm = document.querySelector(`[data-popup="#${formID}"]`),
         closeForm = modalForm.querySelector('.close-form'),
+        formContent = modalForm.querySelector('.form-content'),
         closeGift = modalForm.querySelector('.close-btn');
 
     openForm.addEventListener('click', () => {
@@ -14,7 +15,7 @@ const openModalWindow = (formID) => {
                 return timeFraction;
             },
             draw(progress) {
-                modalForm.style.opacity = progress * 1;
+                formContent.style.opacity = progress * 1;
             }
         });
         if(closeGift){

@@ -57,6 +57,9 @@ scrollInvise('a[href*="up"]');
 //slider section gallery
 gallerySlider();
 
+
+
+
 // const sendSimpleForm = (formSelector) => {
 //     const erroMessage = 'Что то пошло не так...',
 //         successMesage = 'Спасибо! Мы скоро свяжемся с Вами!';

@@ -11,10 +11,10 @@ const cardCalc = (caclSelector) => {
         12: '19900'
     };
     const schelGym = {
-        '1':'2990',
-        '6': '14990',
-        '9': '21990',
-        '12': '24990'
+        1:'2990',
+        6: '14990',
+        9: '21990',
+        12: '24990'
     };
     let timeOfCard = 1;
     let gym = mozGym; 
@@ -52,9 +52,11 @@ const cardCalc = (caclSelector) => {
         }
     });
     promoField.addEventListener('input', () => {
-        if(promoField.value.match(promoWord)) promo = true;
-        else promo = false;
-        calculate();
+        if(promoField.value.match(promoWord)) {
+            promo = true;
+            promoField.setAttribute("readonly", "readonly");
+            calculate();
+        }
     });
 };
 
