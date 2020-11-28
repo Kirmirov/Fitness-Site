@@ -25,6 +25,7 @@ import gallerySlider from './modules/gallerySlider';
 import stickyBurgerMenu from './modules/stickyBurgerMenu';
 import burgerMenuAction from './modules/burgerMenuAction';
 import sendForm from './modules/sendForm';
+import carousel from './modules/sliderCarousel';
 
 //headerChoice dropdown menu
 gymChoice();
@@ -73,3 +74,5 @@ sendForm('banner-form');
 sendForm('card_order');
 sendForm('footer_form');
 
+
+carousel.init();
