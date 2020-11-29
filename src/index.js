@@ -74,5 +74,5 @@ sendForm('banner-form');
 sendForm('card_order');
 sendForm('footer_form');
 
-
+//carousel slider
 carousel.init();

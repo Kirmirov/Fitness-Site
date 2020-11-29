@@ -8,8 +8,7 @@ const burgerMenuAction = () => {
 
     menu.addEventListener('click', evt =>{
         let target = evt.target;
-        if(target.matches('.close-menu-btn>img')) menu.style.display = 'none';
-        if(target.matches('.scroll>a')) menu.style.display = 'none';
+        if(target.matches('.close-menu-btn>img, .scroll>a')) menu.style.display = 'none';
     });
 };
 

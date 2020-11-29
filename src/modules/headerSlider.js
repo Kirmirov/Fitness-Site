@@ -2,50 +2,50 @@ import animate from './animatePattern';
 
 const headerSlider = () => {
     const sliderWrap = document.querySelector('.main-slider'),
-        sliderList = sliderWrap.querySelectorAll('.slide');
+        slideList = sliderWrap.querySelectorAll('.slide');
 
     let slideCount = 0;
     const changeSlide = () => { 
         const vanish = () => {
             return new Promise ((resolve, reject) => {
                 animate ({
-                    duration: 1900,
+                    duration: 2950,
                     timing(timeFraction) {
                         return timeFraction;
                     },
                     draw(progress) {
-                        [...sliderList][slideCount].style.opacity = 1 - progress;
+                        slideList[slideCount].style.opacity = 1 - progress;
                     }
                 });
-                if([...sliderList][slideCount].style.opacity == 0) resolve();
+                if(slideList[slideCount].style.opacity == 0) resolve();
             });
         };
         const appearance = () => {
             return new Promise ((resolve, reject) => {
                 animate ({
-                    duration: 2000,
+                    duration: 3000,
                     timing(timeFraction) {
                         return timeFraction;
                     },
                     draw(progress) {
-                        [...sliderList][slideCount].style.opacity = progress * 1;
+                        slideList[slideCount].style.opacity = progress * 1;
                     }
                 });
-                if([...sliderList][slideCount].style.opacity == 1) resolve();
+                if(slideList[slideCount].style.opacity == 1) resolve();
             });
         };
 
         vanish()
         .then(() => {
-            [...sliderList][slideCount].style.display = 'none';
+            slideList[slideCount].style.display = 'none';
             slideCount++;
-            if(slideCount >= sliderList.length) slideCount = 0;
-            [...sliderList][slideCount].style.display = 'flex';
+            if(slideCount >= slideList.length) slideCount = 0;
+            slideList[slideCount].style.display = 'flex';
         })
         .then(appearance);
     };
     changeSlide();
-    setInterval(changeSlide, 2000);
+    setInterval(changeSlide, 3000);
 };
 
 export default headerSlider;

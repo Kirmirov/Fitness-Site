@@ -1,4 +1,4 @@
-const scrollInvise = (scrollSelect) => {
+const scrollInvise = scrollSelect => {
     const header = document.querySelector('header'),
         scroll = document.querySelector(scrollSelect);   
         scroll.style.display = 'none';

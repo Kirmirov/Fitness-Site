@@ -1,6 +1,6 @@
 const gallerySlider = () => {
-    const gallery = document.querySelector('.gallery-slider'),
-        slideList = gallery.querySelectorAll('.slide');
+    const sliderWrap = document.querySelector('.gallery-slider'),
+        slideList = sliderWrap.querySelectorAll('.slide');
 //create slider structure//
     //added stiles for slides
     slideList.forEach((slide, index) => {
@@ -23,13 +23,13 @@ const gallerySlider = () => {
     const prevBTN = document.createElement('button');
     prevBTN.classList.add('slider-btn-prev');
     //added elemenyts to slaider's wrapp
-    gallery.append(dotBox);
-    gallery.append(nextBTN);
-    gallery.append(prevBTN);
+    sliderWrap.append(dotBox);
+    sliderWrap.append(nextBTN);
+    sliderWrap.append(prevBTN);
     //get DOM collections of dots
-    const dotList = gallery.querySelectorAll('.dot');
+    const dotList = sliderWrap.querySelectorAll('.dot');
     //set styles for new elements
-    gallery.style.position = 'relative';
+    sliderWrap.style.position = 'relative';
     dotBox.style.cssText = `
         display: flex;
         bottom: 30px;
@@ -95,7 +95,7 @@ const gallerySlider = () => {
         slide[index].style.opacity = '1';
     };
 
-    gallery.addEventListener('click', evt => {
+    sliderWrap.addEventListener('click', evt => {
         let target = evt.target;
 
         if(!target.matches('.slider-btn-next, .slider-btn-prev, .dot')) return;

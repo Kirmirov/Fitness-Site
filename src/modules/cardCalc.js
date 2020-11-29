@@ -1,6 +1,6 @@
 import animate from './animatePattern';
 
-const cardCalc = (caclSelector) => {
+const cardCalc = caclSelector => {
     const cardOrder = document.querySelector(caclSelector),
             promoField = cardOrder.querySelector('input[name=promo-name]');
 
@@ -9,25 +9,23 @@ const cardCalc = (caclSelector) => {
         6: '9900',
         9: '13900',
         12: '19900'
-    };
-    const schelGym = {
+    },
+    schelGym = {
         1:'2990',
         6: '14990',
         9: '21990',
         12: '24990'
-    };
-    let timeOfCard = 1;
-    let gym = mozGym; 
-    let promo = false;
-    const promoWord = 'ТЕЛО2020';
-    const discount = 30;
+    },
+    promoWord = 'ТЕЛО2020',
+    discount = 30;
+
+    let timeOfCard = 1,
+        gym = mozGym,
+        promo = false;
 
     const calculate = () => {
         const priceValue = document.getElementById('price-total');
-        let total;
-        if(promo) total = gym[timeOfCard] - ((gym[timeOfCard] * discount) / 100);
-        else total = gym[timeOfCard];
-
+        let total = promo ? gym[timeOfCard] - ((gym[timeOfCard] * discount) / 100) : gym[timeOfCard];
         animate ({
             duration: 400,
             timing(timeFraction) {
@@ -46,8 +44,7 @@ const cardCalc = (caclSelector) => {
             calculate();
         } 
         if(target.matches('input[name=club-name]')){
-            if(target.value === 'schelkovo') gym = schelGym;
-            else gym = mozGym;
+            gym = target.value === 'schelkovo' ? schelGym : mozGym;
             calculate();
         }
     });

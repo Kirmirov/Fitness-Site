@@ -1,6 +1,6 @@
 import animate from './animatePattern';
 
-const modalWindowAction = (formID) => {
+const modalWindowAction = formID => {
     const modalForm = document.getElementById(formID),
         openForm = document.querySelector(`[data-popup="#${formID}"]`),
         closeForm = modalForm.querySelector('.close-form'),

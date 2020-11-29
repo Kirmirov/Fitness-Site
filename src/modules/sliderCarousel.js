@@ -123,7 +123,7 @@ class SliderCarousel {
                 border-radius: 50%;
             }
             .single-slider__next {
-                background: url(../images/arrow-right.png) no-repeat center/10px 18px;
+                background: url(images/arrow-right.png) no-repeat center/10px 18px;
                 background-color: #ffd11a;
                 border: none;
                 position: absolute;
@@ -133,7 +133,7 @@ class SliderCarousel {
             }
             .single-slider__prev {
                 position: absolute;
-                background: url(../images/arrow-left.png) no-repeat center/10px 18px;
+                background: url(images/arrow-left.png) no-repeat center/10px 18px;
                 background-color: #ffd11a;
                 border: none;
                 top: calc(25%);
