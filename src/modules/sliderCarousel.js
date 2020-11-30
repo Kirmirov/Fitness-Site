@@ -142,6 +142,20 @@ class SliderCarousel {
             }
             `;
         document.head.append(style);
+
+        this.next.addEventListener('mousedown', () => {
+            this.next.style.boxShadow = '-2px 0px 19px 0px #ffd11a';
+        });
+        this.next.addEventListener('mouseup', () => {
+            this.next.style.boxShadow = 'none';
+        });
+    
+        this.prev.addEventListener('mousedown', () => {
+            this.prev.style.boxShadow = '-2px 0px 19px 0px #ffd11a';
+        });
+        this.prev.addEventListener('mouseup', () => {
+            this.prev.style.boxShadow = 'none';
+        });
     }
 
     responseInit() {

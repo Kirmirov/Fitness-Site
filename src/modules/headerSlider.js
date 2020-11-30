@@ -3,13 +3,11 @@ import animate from './animatePattern';
 const headerSlider = () => {
     const sliderWrap = document.querySelector('.main-slider'),
         slideList = sliderWrap.querySelectorAll('.slide');
-
-    let slideCount = 0;
-    const changeSlide = () => { 
+    
         const vanish = () => {
             return new Promise ((resolve, reject) => {
                 animate ({
-                    duration: 2950,
+                    duration: 2900,
                     timing(timeFraction) {
                         return timeFraction;
                     },
@@ -34,18 +32,21 @@ const headerSlider = () => {
                 if(slideList[slideCount].style.opacity == 1) resolve();
             });
         };
-
-        vanish()
-        .then(() => {
+        const changeSlide = () => {
             slideList[slideCount].style.display = 'none';
             slideCount++;
             if(slideCount >= slideList.length) slideCount = 0;
             slideList[slideCount].style.display = 'flex';
-        })
+        };
+
+
+    let slideCount = 0;
+    const autoPlay = () => { 
+        vanish()
+        .then(changeSlide)
         .then(appearance);
     };
-    changeSlide();
-    setInterval(changeSlide, 3000);
+    setInterval(autoPlay, 3000);
 };
 
 export default headerSlider;

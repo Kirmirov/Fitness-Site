@@ -48,7 +48,7 @@ const gallerySlider = () => {
         `;
         dot.style.backgroundColor = index === 0 ? '#ffd11a' : '#ffffff';
     });
-
+    
     nextBTN.style.cssText = `
         position: absolute;
         cursor: pointer;
@@ -72,6 +72,21 @@ const gallerySlider = () => {
         border-radius: 50%;
         background: url(images/arrow-left.png) no-repeat center #ffd11a;
     `;
+
+    nextBTN.addEventListener('mousedown', () => {
+        nextBTN.style.boxShadow = '-2px 0px 19px 0px #ffd11a';
+    });
+    nextBTN.addEventListener('mouseup', () => {
+        nextBTN.style.boxShadow = 'none';
+    });
+
+    prevBTN.addEventListener('mousedown', () => {
+        prevBTN.style.boxShadow = '-2px 0px 19px 0px #ffd11a';
+    });
+    prevBTN.addEventListener('mouseup', () => {
+        prevBTN.style.boxShadow = 'none';
+    });
+
     //slider
     let currentSlide = 0;
     
